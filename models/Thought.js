@@ -10,25 +10,27 @@ const thoughtSchema = new Schema(
             minLength: 1,
             maxLength: 280,
         },
-        createdAt: {
-            type: Date,
-            default: () => Date.now(),
-            // use getter method to format timestamp on query 
-        },
         username: {
             type: String,
             required: true,
+        },
+        createdAt: { 
+            type: Date, 
+            default: Date.now 
         },
         reactions: [ Reaction ],
     },
     {
         toJSON: {
-            getters: true,
             virtuals: true,
+            getters: true,
         },
         id: false,
     }
 );
+
+// 
+thoughtSchema.set('timestamps', true);
 
 // Virtual to get numebr of reactions to a thought
 thoughtSchema
