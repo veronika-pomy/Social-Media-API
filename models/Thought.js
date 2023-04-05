@@ -13,7 +13,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: () => Date.now(),
-            // use getter method to format timestamp n query ???
+            // use getter method to format timestamp on query 
         },
         username: {
             type: String,
@@ -23,6 +23,7 @@ const thoughtSchema = new Schema(
     },
     {
         toJSON: {
+            getters: true,
             virtuals: true,
         },
         id: false,
