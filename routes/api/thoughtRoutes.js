@@ -5,9 +5,9 @@ const {
   createThought,
   updateThought,
   deleteThought,
-} = require('../../controllers/appController');
+} = require('../../controllers/thoughtController');
 
-// api for reactions????
+// api for reactions
 
 // /api/thoughts
 router.route('/').get(getThoughts).post(createThought);

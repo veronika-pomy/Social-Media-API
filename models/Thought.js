@@ -29,6 +29,7 @@ const thoughtSchema = new Schema(
     }
 );
 
+// need to fix, does not work
 // getter for timestamp now
 function dateNow ( ) {
     return Date.now

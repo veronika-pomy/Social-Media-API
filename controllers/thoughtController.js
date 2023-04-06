@@ -1,6 +1,6 @@
 const { User, Thought } = require('../models');
 
-// need to add any reactons controllers?
+// need to add reactons controllers
 
 module.exports = {
     // get all thoughts
@@ -43,6 +43,7 @@ module.exports = {
         });
     },
     // update a thought
+    // update for user ???
     updateThought(req, res) {
       Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
@@ -59,7 +60,7 @@ module.exports = {
           res.status(500).json(err);
         });
     },
-    // delete a thought from the database. Looks for an app by ID.
+    // delete a thought from the database
     // update array for the user
     deleteThought(req, res) {
       Thought.findOneAndRemove({ _id: req.params.thoughtId })

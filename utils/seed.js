@@ -10,12 +10,12 @@ connection.once('open', async () => {
     await Thought.deleteMany({});
     await User.deleteMany({});
 
-     // Add users to the collection and await the results
+    // Add users to the collection and await the results
     await User.collection.insertMany(username);
 
     // Add thoughts to the collection and await the results
     await Thought.collection.insertMany(thought);
-
+    
     // Console log seed data
     console.table(username);
     console.table(thought);
