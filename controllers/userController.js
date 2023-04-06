@@ -1,6 +1,7 @@
 const { User } = require('../models');
 
 // add update user controller
+// post and delete user friends 
 
 module.exports = {
     // Get all users
