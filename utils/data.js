@@ -2,7 +2,7 @@
 const username = [
     {
         username: 'mathrocks43',
-        email: 'math.rocks@email.com'
+// ask about this
     },
     {
         username: 'doglover7',

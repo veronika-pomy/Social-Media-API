@@ -12,11 +12,11 @@ const userSchema = new Schema(
         email: {
             type: String, 
             required: true,
-            unique: true, // username must be unique
+            unique: true,
             lowercase: true, // email always lowercase letters
             validate: {
                 validator: function(v) {
-                return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(v); //  match a valid email address
+                  return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(v); //  match a valid email address
                 },
                 message: props => `${props.value} is not a valid email. Please try again!`
             },

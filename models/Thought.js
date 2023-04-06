@@ -16,7 +16,7 @@ const thoughtSchema = new Schema(
         },
         createdAt: { 
             type: Date, 
-            default: Date.now 
+            get: dateNow,
         },
         reactions: [ Reaction ],
     },
@@ -29,8 +29,10 @@ const thoughtSchema = new Schema(
     }
 );
 
-// 
-thoughtSchema.set('timestamps', true);
+// getter for timestamp now
+function dateNow ( ) {
+    return Date.now
+};
 
 // Virtual to get numebr of reactions to a thought
 thoughtSchema
