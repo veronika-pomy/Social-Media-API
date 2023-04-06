@@ -4,13 +4,13 @@ const { User } = require('../models');
 // post and delete user friends 
 
 module.exports = {
-    // Get all users
+    // get all users
     getUsers(req, res) {
       User.find()
         .then((users) => res.json(users))
         .catch((err) => res.status(500).json(err));
     },
-    // Get a single user
+    // get a single user
     getSingleUser(req, res) {
       User.findOne({ _id: req.params.userId })
         .select('-__v')
@@ -27,7 +27,7 @@ module.exports = {
         .then((user) => res.json(user))
         .catch((err) => res.status(500).json(err));
     },
-    // Delete a user
+    // delete a user
     deleteUser(req, res) {
       User.findOneAndDelete({ _id: req.params.userId })
         .then((user) =>
