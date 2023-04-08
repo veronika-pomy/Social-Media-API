@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Thought } = require('../models');
 
 // add update user controller
 // post and delete user friends 
@@ -29,7 +29,8 @@ module.exports = {
     },
     // delete a user
     deleteUser(req, res) {
-      User.findOneAndDelete({ _id: req.params.userId })
+      User.findOneAndDelete({ _id: req.params.userId})
+        .then((user) => Thought.deleteMany({username: user.username})) // delete user's thoughts
         .then((user) =>
           !user
             ? res.status(404).json({ message: 'No user with that ID' })

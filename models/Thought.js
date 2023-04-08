@@ -34,7 +34,7 @@ const thoughtSchema = new Schema(
     }
 );
 
-// getter to format timestamp
+// Getter to format timestamp
 function dateNow (createdAt) {
     return `${dayjs(createdAt).format('MMMM Do, YYYY')} at ${dayjs(createdAt).format('H:mm a')}`
 };

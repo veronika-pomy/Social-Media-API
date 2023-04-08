@@ -26,7 +26,7 @@ module.exports = {
         .then((thought) => {
           return User.findOneAndUpdate(
             { _id: req.body.userId },
-            { $addToSet: { thoughts: thought._id } }, // not sure about this
+            { $addToSet: { thoughts: thought._id } }, 
             { new: true }
           );
         })
@@ -43,12 +43,11 @@ module.exports = {
         });
     },
     // update a thought
-    // update for user ???
     updateThought(req, res) {
       Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $set: req.body },
-        { runValidators: true, new: true } // enforce validations ? 
+        { runValidators: true, new: true } // enforce validations 
       )
         .then((thought) =>
           !thought
