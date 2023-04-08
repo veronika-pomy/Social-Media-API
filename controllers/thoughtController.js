@@ -19,6 +19,7 @@ module.exports = {
         )
         .catch((err) => res.status(500).json(err));
     },
+
     // creates a new thought
     // update user associated with thought
     createThought(req, res) {
@@ -42,6 +43,7 @@ module.exports = {
           res.status(500).json(err);
         });
     },
+
     // update a thought
     updateThought(req, res) {
       Thought.findOneAndUpdate(
@@ -59,6 +61,7 @@ module.exports = {
           res.status(500).json(err);
         });
     },
+    
     // delete a thought from the database
     // update array for the user
     deleteThought(req, res) {
