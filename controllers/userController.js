@@ -1,7 +1,5 @@
 const { User, Thought } = require('../models');
 
-// post and delete user friends 
-
 module.exports = {
     // get all users
     getUsers(req, res) {
@@ -55,6 +53,36 @@ module.exports = {
           !user
             ? res.status(404).json({ message: 'No user with that ID' })
             : res.json({ message: 'User is deleted.' })
+        )
+        .catch((err) => res.status(500).json(err));
+    },
+
+    // add a friend by id
+    addFriend(req, res) {
+      User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $addToSet: { friends: req.params.friendId } },
+        { runValidators: true, new: true }
+      )
+      .then((user) =>
+          !user
+            ? res.status(404).json({ message: 'No user with this id.' })
+            : res.json(user)
+      )
+      .catch((err) => res.status(500).json(err));
+    },
+
+    // delete a friend by id
+    deleteFriend(req, res) {
+      User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $pull: { friends: req.params.friendId } },
+        { runValidators: true, new: true }
+      )
+        .then((user) =>
+          !user
+            ? res.status(404).json({ message: 'No user with this id.' })
+            : res.json(user)
         )
         .catch((err) => res.status(500).json(err));
     },
