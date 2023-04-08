@@ -1,6 +1,5 @@
 const { User, Thought } = require('../models');
 
-// add update user controller
 // post and delete user friends 
 
 module.exports = {
