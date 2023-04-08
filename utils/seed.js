@@ -12,10 +12,8 @@ connection.once('open', async () => {
 
     // Add users to the collection and await the results
     await User.collection.insertMany(username);
-    // option to pass insert many
 
     // Add thoughts to the collection and await the results
-        // thought as an array of a user 
     await Thought.collection.insertMany(thought);
     
     // Console log seed data

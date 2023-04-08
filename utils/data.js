@@ -2,30 +2,7 @@
 const username = [
     {
         username: 'mathrocks43',
-        thoughts: [
-            {
-                thoughtText: 'I love math!',
-                username: 'mathrocks43',
-                reactions: [ 
-                    {
-                        reactionBody: 'Me too!',
-                        username: 'cheese_38'
-                    }
-                ],
-            },
-            {
-                thoughtText: 'This is my fav math problem:...',
-                username: 'mathrocks43',
-                reactions: [ 
-                    {
-                        reactionBody: 'Woah math is hard',
-                        username: 'doglover7'
-                    }
-                ],
-            },
-        ]
-            // thoughts array here 
-// ask about this
+       email: 'math.rocks43@email.com'
     },
     {
         username: 'doglover7',
@@ -50,6 +27,10 @@ const thought = [
             {
                 reactionBody: 'Me too!',
                 username: 'cheese_38'
+            },
+            {
+                reactionBody: 'Not me!',
+                username: 'doglover7'
             }
         ],
     },

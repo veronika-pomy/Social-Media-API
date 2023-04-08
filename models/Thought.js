@@ -1,5 +1,9 @@
 const { Schema, model } = require('mongoose');
 const Reaction = require('./Reaction');
+const dayjs = require('dayjs');
+
+var advancedFormat = require('dayjs/plugin/advancedFormat')
+dayjs.extend(advancedFormat)
 
 // Schema for Thought model
 const thoughtSchema = new Schema(
@@ -16,23 +20,23 @@ const thoughtSchema = new Schema(
         },
         createdAt: { 
             type: Date, 
+            default: Date.now,
             get: dateNow,
         },
         reactions: [ Reaction ],
     },
     {
         toJSON: {
-            virtuals: true,
             getters: true,
+            virtuals: true,
         },
         id: false,
     }
 );
 
-// need to fix, does not work
-// getter for timestamp now
-function dateNow ( ) {
-    return Date.now
+// getter to format timestamp
+function dateNow (createdAt) {
+    return `${dayjs(createdAt).format('MMMM Do, YYYY')} at ${dayjs(createdAt).format('H:mm a')}`
 };
 
 // Virtual to get numebr of reactions to a thought
