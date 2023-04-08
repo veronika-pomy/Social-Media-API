@@ -54,7 +54,7 @@ THEN they can successfully create and delete reactions to thoughts and add and r
 
 This video demonstrates the app's functionality.
 
-![home](./assets/video/)
+https://user-images.githubusercontent.com/111567114/230741713-28669e27-86c8-4925-b3cf-b131686f787c.mp4
 
 ---
 
