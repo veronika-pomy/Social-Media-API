@@ -13,7 +13,7 @@ connection.once('open', async () => {
     // Add users to the collection and await the results
     await User.collection.insertMany(username);
     
-    // Console log seed data
+    // Log out seeded data
     console.table(username);
     console.info('Data seeded.');
     process.exit(0);
