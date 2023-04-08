@@ -2,8 +2,8 @@ const { Schema, model } = require('mongoose');
 const Reaction = require('./Reaction');
 const dayjs = require('dayjs');
 
-var advancedFormat = require('dayjs/plugin/advancedFormat')
-dayjs.extend(advancedFormat)
+var advancedFormat = require('dayjs/plugin/advancedFormat');
+dayjs.extend(advancedFormat);
 
 // Schema for Thought model
 const thoughtSchema = new Schema(

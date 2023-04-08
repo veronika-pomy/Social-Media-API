@@ -4,9 +4,27 @@
 
 ## Description
 
-This application is a...
+This is an API for a social network application that uses MongoDB (NoSQl) database to retrieve and manipulate user data.
 
 ### App functionality
+
+GIVEN a social network API
+
+WHEN users enter the command to invoke the application
+
+THEN a server is started, and the Mongoose models are synced to the MongoDB database
+
+WHEN users open API GET routes in Insomnia for users and thoughts
+
+THEN the data for each of these routes are displayed in a formatted JSON
+
+WHEN users test API POST, PUT, and DELETE routes in Insomnia
+
+THEN they successfully create, update, and delete users and thoughts in a database
+
+WHEN users test API POST and DELETE routes in Insomnia
+
+THEN they can successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 
 ---
 
@@ -59,6 +77,7 @@ This list includes resources used for the project.
 - [Best README Template](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
 - [Dayjs](https://www.npmjs.com/package/dayjs)
 - [Express](https://expressjs.com/)
+- [Insomnia](https://insomnia.rest/)
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose ODM](https://mongoosejs.com/)
 - [Node.js](https://nodejs.org/en/)
